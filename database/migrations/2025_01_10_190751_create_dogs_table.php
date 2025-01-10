@@ -13,6 +13,16 @@ return new class extends Migration
     {
         Schema::create('dogs', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('sex');
+            $table->integer('age');
+            $table->string('size');
+            $table->integer('weight');
+            $table->integer('height');
+            $table->string('hair');
+            $table->boolean('adopted')->default(false);
+            $table->text('description')->nullable(); 
+            $table->string('photo_path')->nullable();
             $table->timestamps();
         });
     }
