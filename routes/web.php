@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\PsyController;
 use App\Http\Controllers\AdoptowaneController;
 use App\Http\Controllers\HomeController;
@@ -19,6 +20,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/psy', [PsyController::class, 'index'])->name('psy');
 Route::get('/psy/{slug}', [PsyController::class, 'show'])->name('psy.show');
 Route::get('/adoptowane', [AdoptowaneController::class, 'index'])->name('adoptowane');
+Route::get('/adoptowane/{slug}', [AdoptowaneController::class, 'show'])->name('adoptowane.show');
 Route::get('/onas', [OnasController::class, 'index'])->name('onas');
 Route::get('/kontakt', [KontaktController::class, 'index'])->name('kontakt');
 Route::get('/moje', [MojeController::class, 'index'])->name('moje');

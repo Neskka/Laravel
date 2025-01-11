@@ -38,38 +38,18 @@
         <p>Dzięki waszej pomocy przy wirtualnej adopcji znaleźli się ludzie, którzy postanowili dać im prawdziwy dom.</p>
         <p>Dziękujemy wam za to i mamy nadzieję, że takich przypadków będzie coraz więcej &lt;3</p>
         <div class="gallery">
-            <div class="item">
-                <a href="psy/alistar.html">
-                    <img src="zdjecia/Alistar/alistar1.jpg" alt="">
-                    <div class="caption">Alistar</div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="psy/ariko.html">
-                    <img src="zdjecia/Ariko/ariko1.jpg" alt="">
-                    <div class="caption">Ariko</div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="psy/gohan.html">
-                    <img src="zdjecia/Gohan/gohan1.jpg" alt="">
-                    <div class="caption">Gohan</div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="psy/shine.html">
-                    <img src="zdjecia/Shine/shine1.jpg" alt="">
-                    <div class="caption">Shine</div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="psy/tasil.html">
-                    <img src="zdjecia/Tasil/tasil1.jpg" alt="">
-                    <div class="caption">Tasil</div>
-                </a>
-            </div>
+            @forelse ($dogs as $dog)
+                <div class="item">
+                    <a href="{{ route('adoptowane.show', ['slug' => $dog->slug]) }}">
+                        <img src="{{ asset('storage/' . $dog->photo_path) }}" alt="{{ $dog->name }}">
+                        <div class="caption">{{ $dog->name }}</div>
+                    </a>
                 </div>
-            </div>
+            @empty
+                <p>Brak psów do wyświetlenia.</p>
+            @endforelse
+        </div>
+    </div>
 </main>
 
 <footer class="footer">

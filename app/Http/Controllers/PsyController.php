@@ -13,7 +13,6 @@ class PsyController extends Controller
     
         return view('psy', compact('dogs'));
     }
-    
 
     public function show($slug)
     {
@@ -23,4 +22,5 @@ class PsyController extends Controller
 
         return view('show', compact('dog'));
     }
+
 }
