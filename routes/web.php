@@ -1,6 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PsyController;
+use App\Http\Controllers\AdoptowaneController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DogController;
+use App\Http\Controllers\KontaktController;
+use App\Http\Controllers\MojeController;
+use App\Http\Controllers\OnasController;
 
 Route::get('/', function () {
     return view('home');
@@ -8,9 +15,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/psy', [App\Http\Controllers\PsyController::class, 'index'])->name('psy');
-Route::get('/adoptowane', [App\Http\Controllers\AdoptowaneController::class, 'index'])->name('adoptowane');
-Route::get('/onas', [App\Http\Controllers\OnasController::class, 'index'])->name('onas');
-Route::get('/kontakt', [App\Http\Controllers\KontaktController::class, 'index'])->name('kontakt');
-Route::get('/moje', [App\Http\Controllers\MojeController::class, 'index'])->name('moje');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/psy', [PsyController::class, 'index'])->name('psy');
+Route::get('/psy/{slug}', [PsyController::class, 'show'])->name('psy.show');
+Route::get('/adoptowane', [AdoptowaneController::class, 'index'])->name('adoptowane');
+Route::get('/onas', [OnasController::class, 'index'])->name('onas');
+Route::get('/kontakt', [KontaktController::class, 'index'])->name('kontakt');
+Route::get('/moje', [MojeController::class, 'index'])->name('moje');
+Route::get('/dodaj', [DogController::class, 'create'])->name('dodaj');
+Route::post('/dogs', [DogController::class, 'store'])->name('dogs.store');
+Route::resource('/dogs', DogController::class);

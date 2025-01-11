@@ -20,7 +20,7 @@
         </div>
         <nav>
             <ul id="nav">
-                <li><a href="{{ url('/') }}">Strona główna</a></li>
+                <li><a href="{{ url('/home') }}">Strona główna</a></li>
                 <li><a href="{{ url('/psy') }}">Psy do adopcji</a></li>
                 <li><a href="{{ url('/adoptowane') }}">Adoptowane psy</a></li>
                 <li><a href="">Informacje</a>
