@@ -69,9 +69,60 @@
 
     </div>
 
+    @if ($dog->adopted == 0)
+    <div class="przyciski">
+        <button id="openModalBtn" class="button">Adoptuj</button>
+        <div id="myModal1" class="modal1">
+            <img src="../zdjecia/piesformularz.png">
+            <div class="modal-content1">
+                <span class="close1">&times;</span>
+                <form id="myForm">
+                    <div class="form-group">
+                        <label for="fname">Imię:</label>
+                        <input type="text" id="fname" name="firstname" placeholder="Twoje imię">
+                        <span class="error" id="fnameError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="lname">Nazwisko:</label>
+                        <input type="text" id="lname" name="lastname" placeholder="Twoje nazwisko">
+                        <span class="error" id="lnameError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="dogName">Imię psa:</label>
+                        <input type="text" id="dogName" name="dogname" placeholder="Imię psa" readonly="readonly" value="{{ $dog->name }}">
+                        <span class="error" id="dogNameError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="text" id="email" name="email" placeholder="E-mail">
+                        <span class="error" id="emailError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefon">Telefon:</label>
+                        <input type="text" id="telefon" name="telefon" placeholder="Telefon">
+                        <span class="error" id="telefonError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="haslo">Hasło:</label>
+                        <input type="password" id="haslo" name="haslo" placeholder="Hasło">
+                        <span class="error" id="hasloError"></span>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="regulamin" class="regulamin" name="regulamin">
+                        <label for="regulamin">Jestem świadomy/a, że wirtualna adopcja tego psa zobowiązuje mnie do regularnego wsparcia finansowego, które zostanie przeznaczone na karmę, leczenie, szczepienia oraz inne niezbędne potrzeby zwierzaka.</label>
+                        <span class="error" id="regulaminError"></span>
+                    </div>
+                    <input type="submit" value="Wyślij">
+                    <input type="reset" id="clearButton" value="Wyczyść">
+                </form>
+            </div>
+        </div>
+    </div>
+    @endif
+
 </div>
 
 <script src="{{ asset('JS/script.js') }}"></script>
-<!--<script src="{{ asset('JS/script2.js') }}"></script>-->
+<script src="{{ asset('JS/script2.js') }}"></script>
 
 @endsection

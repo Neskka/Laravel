@@ -18,6 +18,17 @@
                     </ul>
                 </li>
                 <li><a href="{{ url('/moje') }}">Moje adopcje</a></li>
+                @if (Auth::check())
+                    <li>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: inline;">
+                            @csrf
+                            <button type="submit" class="logout-btn">Wyloguj</button>
+                        </form>
+                    </li>
+                @else
+                    <li><a href="{{ route('login') }}">Zaloguj</a></li>
+                    <li><a href="{{ route('register') }}">Zarejestruj</a></li>
+                @endif
             </ul>
         </nav>
     </div>
