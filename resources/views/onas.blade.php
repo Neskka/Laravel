@@ -1,41 +1,13 @@
-<!DOCTYPE html>
-<html lang="pl" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="UTF-8">
-    <title>O nas</title>
-    <link rel="stylesheet" href="CSS/style2.css" type="text/css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-<header>
-    <div class="pasek">
-        <div class="logo">
-            <img src="zdjecia/logo.png" alt="">
-        </div>
-        <div class="separator">
-            <span class="separator-text">Wirtualna<br>adopcja</span>
-        </div>
-        <nav>
-            <ul id="nav">
-                <li><a href="{{ url('/home') }}">Strona główna</a></li>
-                <li><a href="{{ url('/psy') }}">Psy do adopcji</a></li>
-                <li><a href="{{ url('/adoptowane') }}">Adoptowane psy</a></li>
-                <li><a href="">Informacje</a>
-                    <ul>
-                        <li><a href="{{ url('/onas') }}" >O nas</a></li>
-                        <li><a href="{{ url('/kontakt') }}" >Kontakt</a></li>
-                    </ul>
-                </li>
-                <li><a href="{{ url('/moje') }}">Moje adopcje</a></li>
-            </ul>
-        </nav>
-    </div>
+@extends('layouts.apps')
 
+@section('title', 'Psy do adopcji')
 
-</header>
+@section('styles')
+<link rel="stylesheet" href="{{ asset('CSS/style2.css') }}" type="text/css">
+@endsection
 
-<main>
-    <div class="test">
+@section('content')
+<div class="test">
     <div class="opis">
         <h3>O nas</h3>
         <p>Naszą misją jest nie tylko zapewnienie domów naszym podopiecznym, ale także edukowanie społeczeństwa na temat odpowiedzialnej opieki nad zwierzętami. Jednym z naszych najnowszych i najbardziej ekscytujących projektów jest program wirtualnej adopcji, który daje możliwość pomocy naszym zwierzakom na odległość.</p>
@@ -48,17 +20,6 @@
         <button id="fetchButton">Pokaż słodkiego pieska</button>
         <div id="dataContainer"></div>
     </div>
-    </div>
-</main>
+</div>
 <script src="JS/script5.js"></script>
-<footer class="footer">
-    <div class="footer-item"><img src="zdjecia/paw.png" alt=""><strong>Wirtualna adopcja</strong></div><br>
-    <div class="footer-item"><img src="zdjecia/dom.png" alt="">Nowodwór, 21-100 Lubartów</div><br>
-    <div class="footer-item"><img src="zdjecia/telefon.png" alt=""> 535 987 990</div><br>
-    <div class="footer-item"><img src="zdjecia/email.png" alt=""> <a href="mailto:aga.marzeda@o2.pl">aga.marzeda@o2.pl</a></div><br>
-    <div class="footer-item"><img src="zdjecia/money.png" alt=""> PL 12 3456 7890 1234 5678 9012 3456</div>
-    <div class="stopka">&copy;AM</div>
-</footer>
-
-</body>
-</html>
+@endsection

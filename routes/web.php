@@ -16,6 +16,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/psy', [PsyController::class, 'index'])->name('psy');
 Route::get('/psy/{slug}', [PsyController::class, 'show'])->name('psy.show');

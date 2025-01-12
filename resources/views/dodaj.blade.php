@@ -1,4 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.apps')
+
+@section('styles')
+<link rel="stylesheet" href="{{ asset('CSS/styl.css') }}" type="text/css">
+@endsection
 
 @section('content')
 <div class="container">
