@@ -1,7 +1,7 @@
 @extends('layouts.apps')
 
 @section('styles')
-<link rel="stylesheet" href="{{ asset('CSS/styl.css') }}" type="text/css">
+<link rel="stylesheet" href="{{ asset('CSS/style4.css') }}" type="text/css">
 @endsection
 
 @section('content')
@@ -77,5 +77,6 @@
             </div>
         </div>
     </div>
+    <img src="{{ asset('zdjecia/' . (count($errors) > 0 ? 'walidacjaZle.png' : 'walidacjaDobrze.png')) }}" class="flex-image1" alt="">
 </div>
 @endsection

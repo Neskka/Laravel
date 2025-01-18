@@ -1,0 +1,124 @@
+body {
+    background-image: url('../zdjecia/lapki.jpg');
+    background-attachment: fixed;
+}
+
+.container {
+    background-color: white;
+    text-align: center;
+    justify-content: center;
+    padding-top: 70px;
+    padding-bottom: 30px;
+    margin-left: 150px;
+    margin-right: 150px;
+    min-height: 64.6vh;
+    display: grid;
+    align-items: center;
+    position: relative;
+}
+
+.card {
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+    background-color: #ffffff;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.card-header {
+    background-color: #8d6d3e;
+    color: #ffffff;
+    font-size: 1.25rem;
+    text-align: center;
+    padding: 15px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.card-body {
+    padding: 30px;
+}
+
+/* Formularz */
+form {
+    display: table;
+    width: 100%;
+}
+
+.row {
+    display: table-row;
+    margin-bottom: 15px;
+}
+
+.col-md-4 {
+    display: table-cell;
+    text-align: right;
+    padding-right: 10px;
+    vertical-align: middle;
+}
+
+.col-md-6 {
+    display: table-cell;
+    text-align: left;
+}
+
+input.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+input.form-control:focus {
+    border-color: #8d6d3e;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.invalid-feedback {
+    color: red;
+    font-size: 0.875rem;
+}
+
+/* Przyciski */
+.btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.btn-primary {
+    background-color: #8d6d3e;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-primary:hover {
+    background-color: #5e4725;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.flex-image {
+    height: 150px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    bottom: 0;
+}
+
+.flex-image1 {
+    height: 250px;
+    position: absolute;
+    left: 20%;
+    transform: translateX(-50%);
+    width: auto;
+    bottom: 0;
+}

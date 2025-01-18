@@ -11,8 +11,8 @@
     <div class="kontakt">
         <h3>Kontakt</h3>
         <h2>Zadzwoń lub napisz</h2>
-        <p>+48 535 987 990</p>
-        <p>aga.marzeda@o2.pl</p>
+        <p>+48 535 999 990</p>
+        <p>aga.marzeda@gmail.com</p>
         <h2>Kontakt w sprawie adopcji</h2>
         <p>pon.-sob. - godz. 8:00-18:00</p>
         <p>niedz. - godz. 10:00-16:00</p>
