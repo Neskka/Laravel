@@ -69,9 +69,6 @@ document.getElementById("myForm").onsubmit = function(event) {
     if (!validateField("telefon", "Telefon jest wymagany.", "Telefon musi składać się wyłącznie z cyfr.", validatePhone)) {
         hasErrors = true;
     }
-    if (!validateField("haslo", "Hasło jest wymagane.", "")) {
-        hasErrors = true;
-    }
 
     let regulamin = document.getElementById("regulamin");
     let regulaminError = document.getElementById("regulaminError");
@@ -104,7 +101,6 @@ document.getElementById("clearButton").onclick = function(event) {
     document.getElementById("lname").value = "";
     document.getElementById("email").value = "";
     document.getElementById("telefon").value = "";
-    document.getElementById("haslo").value = "";
     document.getElementById("regulamin").checked = false;
 
     clearErrorMessages();

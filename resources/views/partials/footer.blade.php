@@ -1,3 +1,4 @@
+
 <footer class="footer">
     <div class="footer-item"><img src="{{ asset('zdjecia/paw.png') }}" alt=""><strong>Wirtualna adopcja</strong></div><br>
     <div class="footer-item"><img src="{{ asset('zdjecia/dom.png') }}" alt="">Nowodwór, 21-100 Lubartów</div><br>

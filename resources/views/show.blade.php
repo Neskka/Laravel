@@ -102,11 +102,6 @@
                         <input type="text" id="telefon" name="telefon" placeholder="Telefon">
                         <span class="error" id="telefonError"></span>
                     </div>
-                    <div class="form-group">
-                        <label for="haslo">Hasło:</label>
-                        <input type="password" id="haslo" name="haslo" placeholder="Hasło">
-                        <span class="error" id="hasloError"></span>
-                    </div>
                     <div class="checkbox-group">
                         <input type="checkbox" id="regulamin" class="regulamin" name="regulamin">
                         <label for="regulamin">Jestem świadomy/a, że wirtualna adopcja tego psa zobowiązuje mnie do regularnego wsparcia finansowego, które zostanie przeznaczone na karmę, leczenie, szczepienia oraz inne niezbędne potrzeby zwierzaka.</label>
