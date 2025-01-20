@@ -45,4 +45,10 @@ class Dog extends Model
     {
         return $this->hasMany(DogPhoto::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
 }

@@ -1,18 +1,20 @@
+// Zmiana wartości pola "dogName" na domyślną nazwę psa z nagłówka
 var trescHeader = document.getElementById('dname');
 var defaultDogName = trescHeader.textContent.trim();
-
 var dogNameInput = document.getElementById("dogName");
-
 dogNameInput.value = defaultDogName;
 
+// Otwieranie modala
 document.getElementById("openModalBtn").onclick = function() {
     document.getElementById("myModal1").style.display = "block";
 }
 
+// Zamknięcie modala
 document.getElementsByClassName("close1")[0].onclick = function() {
     document.getElementById("myModal1").style.display = "none";
 }
 
+// Walidacja pól formularza
 function validateField(fieldId, emptyErrorMessage, formatErrorMessage, customValidation) {
     let field = document.getElementById(fieldId);
     let fieldValue = field.value.trim();
@@ -30,6 +32,7 @@ function validateField(fieldId, emptyErrorMessage, formatErrorMessage, customVal
     }
 }
 
+// Funkcja do czyszczenia komunikatów o błędach
 function clearErrorMessages() {
     let errorElements = document.querySelectorAll(".error");
     errorElements.forEach(function(el) {
@@ -37,26 +40,42 @@ function clearErrorMessages() {
     });
 }
 
+// Funkcja walidacji imienia (pierwsza litera duża)
+function validateName(name) {
+    return /^[A-ZĄĆĘŁŃÓŚŹŻ][a-ząćęłńóśźż]*$/.test(name);
+}
+
+// Funkcja walidacji e-maila
 function validateEmail(email) {
     let re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
 }
 
+// Funkcja walidacji numeru telefonu
 function validatePhone(phone) {
     return /^[0-9]+$/.test(phone);
 }
 
-function validateName(name) {
-    return /^[A-ZĄĆĘŁŃÓŚŹŻ][a-ząćęłńóśźż]*$/.test(name);
-}
-
-document.getElementById("myForm").onsubmit = function(event) {
+// Funkcja walidacji formularza z danymi psa
+document.getElementById("addDogForm").onsubmit = function(event) {
     event.preventDefault();
 
     let hasErrors = false;
 
-    clearErrorMessages();
+    clearErrorMessages(); // Czyszczenie poprzednich błędów
 
+    // Walidacja pól formularza
+    if (!validateField("name", "Imię jest wymagane.", "Imię musi zaczynać się wielką literą.", validateName)) {
+        hasErrors = true;
+    }
+    if (!validateField("sex", "Płeć jest wymagana.", null, null)) {
+        hasErrors = true;
+    }
+    if (!validateField("age", "Wiek jest wymagany.", "Wiek musi być liczbą.", null)) {
+        hasErrors = true;
+    }
+
+    // Walidacja dodatkowych pól formularza
     if (!validateField("fname", "Imię jest wymagane.", "Imię musi zaczynać się wielką literą.", validateName)) {
         hasErrors = true;
     }
@@ -70,6 +89,7 @@ document.getElementById("myForm").onsubmit = function(event) {
         hasErrors = true;
     }
 
+    // Walidacja regulaminu
     let regulamin = document.getElementById("regulamin");
     let regulaminError = document.getElementById("regulaminError");
     if (!regulamin.checked) {
@@ -79,21 +99,34 @@ document.getElementById("myForm").onsubmit = function(event) {
         regulaminError.textContent = "";
     }
 
+    // Jeśli brak błędów, wyślij formularz
     if (!hasErrors) {
-        var formData = new FormData(event.target);
+        var formData = new FormData(document.getElementById("addDogForm"));
 
-        var formDataObject = Object.fromEntries(formData);
-
-        var existingForms = JSON.parse(localStorage.getItem("form-data")) || [];
-
-        existingForms.push(formDataObject);
-
-        localStorage.setItem("form-data", JSON.stringify(existingForms));
-
-        document.getElementById("myModal1").style.display = "none";
+        fetch("{{ route('dogs.store') }}", {
+            method: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+            },
+            body: formData // Wysłanie formularza z danymi
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert("Pies został dodany!");
+                window.location.href = "/dogs"; // Można zmienić na stronę z listą psów
+            } else {
+                alert("Błąd podczas zapisywania psa.");
+            }
+        })
+        .catch(error => {
+            console.error('Błąd:', error);
+            alert("Wystąpił błąd po stronie serwera.");
+        });
     }
 }
 
+// Funkcja do czyszczenia pól formularza
 document.getElementById("clearButton").onclick = function(event) {
     event.preventDefault();
 

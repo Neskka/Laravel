@@ -19,9 +19,12 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'surname',
         'email',
+        'phone',
         'password',
     ];
+    
 
     /**
      * The attributes that should be hidden for serialization.
@@ -45,4 +48,10 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function dogs()
+    {
+        return $this->hasMany(Dog::class);
+    }
+    
 }

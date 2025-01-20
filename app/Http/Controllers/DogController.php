@@ -21,7 +21,6 @@ class DogController extends Controller
 
     public function store(Request $request)
     {
-        // Walidacja danych wejściowych
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'sex' => 'required|in:piesek,suczka',
@@ -36,17 +35,14 @@ class DogController extends Controller
             'adopted' => 'nullable|boolean',
         ]);
 
-        // Przetwarzanie zdjęcia głównego
         if ($request->hasFile('photo')) {
             $path = $request->file('photo')->store('dog_photos', 'public');
         } else {
             $path = null;
         }
 
-        // Tworzenie unikalnego slug-a
         $slug = Str::slug($validated['name']);
 
-        // Tworzenie głównego rekordu psa
         $dog = Dog::create([
             'name' => $validated['name'],
             'slug' => $slug,
@@ -61,11 +57,9 @@ class DogController extends Controller
             'adopted' => $request->boolean('adopted'),
         ]);
 
-        // Zapis zdjęć galerii
         if ($request->has('gallery_photos')) {
             foreach ($request->file('gallery_photos') as $photo) {
                 $path = $photo->store('dog_photos', 'public'); // Zapis pliku
-                // Tworzenie rekordu w tabeli dog_photos
                 $dog->photos()->create(['photo_path' => $path]);
             }
         }

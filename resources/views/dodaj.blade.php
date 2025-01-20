@@ -2,11 +2,12 @@
 
 @section('styles')
 <link rel="stylesheet" href="{{ asset('CSS/styl.css') }}" type="text/css">
+<link rel="stylesheet" href="{{ asset('CSS/style.css') }}" type="text/css">
 @endsection
 
 @section('content')
 <div class="container">
-    <h2>Dodaj psa do adopcji</h2>
+    <h3>Dodaj psa do adopcji</h3>
 
     <form action="{{ route('dogs.store') }}" method="POST" enctype="multipart/form-data">
         @csrf

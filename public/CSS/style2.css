@@ -175,6 +175,27 @@ table td strong {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
+
+.button_small {
+    background-color: #6b320a;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(87, 87, 87, 0.83);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.button_small:hover {
+    background-color: #A0522D;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
 .modal1 {
     display: none;
     position: fixed;
@@ -308,4 +329,8 @@ form {
     margin: 0;
     font-size: 12px;
     text-align: left;
+}
+
+.przyciski {
+    margin-top: 20px;
 }
