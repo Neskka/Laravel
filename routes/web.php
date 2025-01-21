@@ -38,7 +38,9 @@ Route::get('/mojekonto', [KontoController::class, 'index'])->name('konto');
 Route::get('/panel', [PanelController::class, 'index'])->name('panel');
 Route::delete('/mojekonto', [KontoController::class, 'destroy'])->name('destroy');
 Route::middleware('auth')->group(function () {
-    Route::get('/konto', [KontoController::class, 'index'])->name('konto');
-    Route::post('/konto/password-change', [KontoController::class, 'changePassword'])->name('password.change');
-    Route::delete('/mojekonto', [KontoController::class, 'destroy'])->name('destroy');
+    Route::get('/panel', [PanelController::class, 'index'])->name('panel');
+    Route::post('/panel/password-change', [KontoController::class, 'changePassword'])->name('password.change');
+    Route::put('/mojekonto', [KontoController::class, 'edit'])->name('konto.edit');
 });
+Route::get('/panel/edytuj/{id}', [PanelController::class, 'edit'])->name('panel.edytuj');
+Route::delete('/panel/usun/{id}', [PanelController::class, 'destroy'])->name('panel.usun');

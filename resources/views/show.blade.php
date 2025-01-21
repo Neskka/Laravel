@@ -1,6 +1,6 @@
 @extends('layouts.apps')
 
-@section('title', 'Psy do adopcji')
+@section('title', $dog->name)
 
 @section('styles')
 <link rel="stylesheet" href="{{ asset('CSS/style2.css') }}" type="text/css">
@@ -109,7 +109,7 @@
                         <span class="error" id="regulaminError"></span>
                     </div>
                     <input type="submit" value="Wyślij">
-                    <input type="reset" id="clearButton" value="Wyczyść">
+                    <button class="anuluj"><a href="/psy/{{ $dog->slug }}">Anuluj</a></button>
                 </form>
             </div>
         </div>

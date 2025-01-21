@@ -9,7 +9,7 @@
 @section('content')
 <div class="zdjecia">
     <h3>One już mają dom :)</h3>
-    <p>Dzięki waszej pomocy przy wirtualnej adopcji znaleźli się ludzie, którzy postanowili dać im prawdziwy dom.</p>
+    <p>Dzięki waszej pomocy przy wirtualnej adopcji tyle psiaków znalazło już swoich opiekunów.</p>
     <p>Dziękujemy wam za to i mamy nadzieję, że takich przypadków będzie coraz więcej &lt;3</p>
     <div class="gallery">
         @forelse ($dogs as $dog)

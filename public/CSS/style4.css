@@ -125,6 +125,17 @@ input.form-control:focus {
     bottom: 0;
 }
 
+.alerty {
+    text-align: center;
+    justify-content: center;
+}
+
+.alerty ul, li {
+    text-align: center;
+    justify-content: center;
+    list-style: none;
+}
+
 @media (max-width: 768px) {
     .flex-image, .flex-image1 {
         height: 90%; 

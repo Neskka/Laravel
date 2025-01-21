@@ -22,44 +22,41 @@ class PsyController extends Controller
     }
 
     public function adoptDog(Request $request)
-{
-    // Debugging
-    \Log::info('Rozpoczęto adopcję psa', $request->all());
+    {
+        $request->validate([
+            'firstname' => 'required|string|max:255',
+            'lastname' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'telefon' => 'required|numeric',
+            'dogname' => 'required|string',
+            'regulamin' => 'required',
+        ]);
 
-    $request->validate([
-        'firstname' => 'required|string|max:255',
-        'lastname' => 'required|string|max:255',
-        'email' => 'required|email|max:255',
-        'telefon' => 'required|numeric',
-        'dogname' => 'required|string',
-        'regulamin' => 'required',
-    ]);
+        $dog = Dog::where('name', $request->dogname)->first();
 
-    $dog = Dog::where('name', $request->dogname)->first();
+        if (!$dog) {
+            return redirect()->back()->with('error', 'Nie znaleziono psa o podanym imieniu.');
+        }
 
-    if (!$dog) {
-        return redirect()->back()->with('error', 'Nie znaleziono psa o podanym imieniu.');
+        if ($dog->adopted) {
+            return redirect()->back()->with('error', 'Ten pies został już adoptowany.');
+        }
+
+        $dog->adopted = true;
+        
+
+        if (Auth::check()) {
+            $dog->user_id = Auth::id();
+        }
+
+        try {
+            $dog->save();
+            return redirect()->route('psy.index')->with('success', 'Pies został pomyślnie adoptowany!');
+        } catch (\Exception $e) {
+            \Log::error('Błąd podczas adopcji psa: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'Wystąpił problem podczas adopcji psa.');
+        }
     }
-
-    if ($dog->adopted) {
-        return redirect()->back()->with('error', 'Ten pies został już adoptowany.');
-    }
-
-    $dog->adopted = true;
-    
-
-    if (Auth::check()) {
-        $dog->user_id = Auth::id();
-    }
-
-    try {
-        $dog->save();
-        return redirect()->route('psy.index')->with('success', 'Pies został pomyślnie adoptowany!');
-    } catch (\Exception $e) {
-        \Log::error('Błąd podczas adopcji psa: ' . $e->getMessage());
-        return redirect()->back()->with('error', 'Wystąpił problem podczas adopcji psa.');
-    }
-}
 
 
 

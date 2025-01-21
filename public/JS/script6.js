@@ -1,13 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('edit-data-btn').addEventListener('click', function() {
-        const form = document.getElementById('edit-data-form');
-        if (form) {
-            form.style.display = form.style.display === 'none' ? 'block' : 'none';
-        }
-    });
+    // Obsługuje kliknięcie na przycisk 'Zmień hasło'
+    const changePasswordButton = document.getElementById('change-password-btn');
+    const changePasswordForm = document.getElementById('change-password-form');
 
-    document.getElementById('change-password-btn').addEventListener('click', function() {
-        const form = document.getElementById('change-password-form');
-        form.style.display = form.style.display === 'none' ? 'block' : 'none';
-    });
+    if (changePasswordButton && changePasswordForm) {
+        changePasswordButton.addEventListener('click', function() {
+            // Wyświetlenie formularza zmiany hasła
+            changePasswordForm.style.display = (changePasswordForm.style.display === 'none' || changePasswordForm.style.display === '') ? 'block' : 'none';
+        });
+    }
 });
