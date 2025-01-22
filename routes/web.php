@@ -27,20 +27,44 @@ Route::get('/adoptowane', [AdoptowaneController::class, 'index'])->name('adoptow
 Route::get('/adoptowane/{slug}', [AdoptowaneController::class, 'show'])->name('adoptowane.show');
 Route::get('/onas', [OnasController::class, 'index'])->name('onas');
 Route::get('/kontakt', [KontaktController::class, 'index'])->name('kontakt');
-Route::get('/moje', [MojeController::class, 'index'])->name('moje');
-Route::get('/dodaj', [DogController::class, 'create'])->name('dodaj');
 Route::post('/dogs', [DogController::class, 'store'])->name('dogs.store');
 Route::resource('/dogs', DogController::class);
 Route::post('/psy/adopt', [PsyController::class, 'adoptDog'])->name('psy.adopt');
-Route::get('/moje/{slug}', [MojeController::class, 'show'])->name('moje.show');
-Route::patch('/adoptowane/{id}/cancel', [MojeController::class, 'cancel'])->name('adoptowane.cancel');
-Route::get('/mojekonto', [KontoController::class, 'index'])->name('konto');
-Route::get('/panel', [PanelController::class, 'index'])->name('panel');
-Route::delete('/mojekonto', [KontoController::class, 'destroy'])->name('destroy');
 Route::middleware('auth')->group(function () {
-    Route::get('/panel', [PanelController::class, 'index'])->name('panel');
-    Route::post('/panel/password-change', [KontoController::class, 'changePassword'])->name('password.change');
-    Route::put('/mojekonto', [KontoController::class, 'edit'])->name('konto.edit');
+    Route::get('/moje', [MojeController::class, 'index'])->name('moje');
+    Route::get('/moje/{slug}', [MojeController::class, 'show'])->name('moje.show');
+    Route::patch('/adoptowane/{id}/cancel', [MojeController::class, 'cancel'])->name('adoptowane.cancel');
+    Route::get('/konto', [KontoController::class, 'index'])->name('konto');
+    Route::delete('/konto', [KontoController::class, 'destroy'])->name('destroy');
+    Route::post('/konto/password-change', [KontoController::class, 'changePassword'])->name('password.change');
+    Route::put('/konto', [KontoController::class, 'edit'])->name('konto.edit');
+    
+    //Dostęp tylko dla administratora
+    Route::get('/admin/panel', function () {
+        if (auth()->user()->admin != 1) {
+            abort(403, 'Dostęp zabroniony');
+        }
+        return app(PanelController::class)->index();
+    })->name('panel');
+
+    Route::get('/admin/dodaj', function () {
+        if (auth()->user()->admin != 1) {
+            abort(403, 'Dostęp zabroniony');
+        }
+        return app(DogController::class)->create();
+    })->name('dodaj');
+
+    Route::get('/admin/edytuj/{id}', function ($id) {
+        if (auth()->user()->admin != 1) {
+            abort(403, 'Dostęp zabroniony');
+        }
+        return app(PanelController::class)->edit($id);
+    })->name('panel.edytuj');
+
+    Route::delete('/admin/usun/{id}', function ($id) {
+        if (auth()->user()->admin != 1) {
+            abort(403, 'Dostęp zabroniony');
+        }
+        return app(PanelController::class)->destroy($id);
+    })->name('panel.usun');
 });
-Route::get('/panel/edytuj/{id}', [PanelController::class, 'edit'])->name('panel.edytuj');
-Route::delete('/panel/usun/{id}', [PanelController::class, 'destroy'])->name('panel.usun');

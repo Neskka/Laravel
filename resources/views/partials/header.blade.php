@@ -19,7 +19,7 @@
                 </li>
                 @if (Auth::check())
                 <li><a href="{{ url('/moje') }}">Moje adopcje</a></li>
-                <li><a href="{{url('/mojekonto')}}">Moje konto</a></li>
+                <li><a href="{{url('/konto')}}">Moje konto</a></li>
                     <li>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: inline;">
                             @csrf

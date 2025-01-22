@@ -27,15 +27,15 @@ class MojeController extends Controller
 
     public function cancel($id)
     {
-    $dog = Dog::where('id', $id)
-        ->where('user_id', Auth::id()) // Upewnij się, że pies należy do aktualnego użytkownika
-        ->firstOrFail();
+        $dog = Dog::where('id', $id)
+            ->where('user_id', Auth::id()) // Upewnij się, że pies należy do aktualnego użytkownika
+            ->firstOrFail();
 
-    $dog->adopted = 0; // Ustaw na "nieadoptowany"
-    $dog->user_id = null; // Usuń przypisanie użytkownika
-    $dog->save();
+        $dog->adopted = 0; // Ustaw na "nieadoptowany"
+        $dog->user_id = null; // Usuń przypisanie użytkownika
+        $dog->save();
 
-    return redirect()->route('moje')->with('success', 'Zrezygnowałeś/aś z adopcji psa.');
+        return redirect()->route('moje')->with('success', 'Zrezygnowałeś/aś z adopcji psa.');
 }
 
 
