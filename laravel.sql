@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sty 19, 2025 at 04:03 PM
+-- Generation Time: Sty 22, 2025 at 04:32 PM
 -- Wersja serwera: 10.4.32-MariaDB
 -- Wersja PHP: 8.0.30
 
@@ -64,33 +64,31 @@ CREATE TABLE `dogs` (
   `adopted` tinyint(1) NOT NULL DEFAULT 0,
   `description` text DEFAULT NULL,
   `photo_path` varchar(255) DEFAULT NULL,
-  `gallery_photo_1` varchar(255) DEFAULT NULL,
-  `gallery_photo_2` varchar(255) DEFAULT NULL,
-  `gallery_photo_3` varchar(255) DEFAULT NULL,
-  `gallery_photo_4` varchar(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `user_id` bigint(20) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `dogs`
 --
 
-INSERT INTO `dogs` (`id`, `name`, `slug`, `sex`, `age`, `size`, `weight`, `height`, `hair`, `adopted`, `description`, `photo_path`, `gallery_photo_1`, `gallery_photo_2`, `gallery_photo_3`, `gallery_photo_4`, `created_at`, `updated_at`) VALUES
-(1, 'Lonely', 'lonely', 'suczka', 2, 'średni', 14, 45, 'Krótka/mieszana', 0, 'Lonley to piękna, oryginalnie umaszczona a do tego przesympatyczna sunia. Bardzo łagodna, kochana, uległa i posłuszna. Uwielbia pieszczoty, ale nie jest przy tym nachalna. Jest przyjaźnie nastawiona do wszystkich, zarówno dorosłych jak i dzieci. Potrafi pięknie chodzić na smyczy. Lonella pozytywnie reaguje na wszystkie napotkane psiaki, zachęca je wesoło do zabawy. Nigdy nie wykazuje agresji, nie warczy, ma postawę bardzo uległą. W domu tymczasowym mieszka w 7 letnią dziewczynką, jest naprawdę wzorowym pieskiem. Zachowuje czystość, nie niszczy, nie wchodzi na kanapę, nie ściąga jedzenia z kuchennych blatów. Grzecznie zostaje sama w domu kilka godzin. Uwielbia zabawę piłeczką w ogrodzie, widać, że sprawia jej to ogromną radość. Zamienia się wtedy w wulkan energii. Nawet podczas szalonej zabawy jest delikatna i ostrożna (także wobec kilkuletnich dzieci). Nie sprawia żadnych kłopotów podczas jazdy samochodem. To naprawdę idealna sunieczka - wierzymy, że wkrótce ktoś się w niech zakocha. Lonley jest wykastrowana.', 'dog_photos/AeteXaZSeFoN8PCMbwY3kih8q6ULGrjlKIC3JZ6k.jpg', NULL, NULL, NULL, NULL, '2025-01-19 13:43:19', '2025-01-19 13:43:19'),
-(2, 'Lento', 'lento', 'piesek', 1, 'mały', 12, 38, 'Długa/mieszana', 0, 'Lento jest przyjaznym, niestrachliwym i bardzo śmiałym pieskiem. Przypuszczamy, że żył w mieście, bo nie boi się przejeżdżających aut i dużych skupisk ludzi czy psów. Radośnie wita każdego człowieka, a w boksie staje na dwóch łapkach i szczeka, chcąc zwrócić na siebie uwagę. Ma dobre relacje z psami ze swojego kojca, na spacerach też jest spokojny wobec psów, chyba, że są duże. Takich się boi i szczeka na nie. Lento ładnie chodzi na smyczy i bardzo lubi spacery u boku człowieka. Powinien wpasować się w rodzinkę z dziećmi, oczywiście takimi, które potrafią szanować psie granice. Lento to typ pieszczocha, który będzie wiernie podążał za Tobą.', 'dog_photos/UpOt5CtJTe71msgneSjpksAyFzIECfkGhZdfDhNC.jpg', NULL, NULL, NULL, NULL, '2025-01-19 13:45:31', '2025-01-19 13:45:31'),
-(3, 'Carlo', 'carlo', 'piesek', 3, 'średni', 25, 58, 'Krótka', 0, 'Carlo to duży, bardzo energiczny samiec. Chce biegać, spacerować zwiedzać świat. Ze względu na swój temperament potrafi pociągnąć na smyczy. Aktywna zabawa to dla niego coś najwspanialszego. Dla Carlo wszystko co najlepsze jest z człowiekiem. Bo ludzi Carlo kocha ponad wszystko. Przytulanie, głaskanie, czochranie za uszami, to właśnie uwielbia. Nie przepada za bliskością innych psów-samców, chociaż na spacerze potrafi się grzecznie mijać. Carlo to wymarzony psiak dla aktywnych osób! Nie odnajdzie się w spokojnym domu, na kanapie... Ruch to jego żywioł. Obecnie Crlo mieszka w domu tymczasowym z duża sunią, z którą pięknie się bawi. Carlo akceptuje także koty.', 'dog_photos/Rucub2j7bGZQTEZKqH8qhSKuJ92g2MA9k5a0yAgE.jpg', NULL, NULL, NULL, NULL, '2025-01-19 13:46:45', '2025-01-19 13:46:45'),
-(4, 'Cheddar', 'cheddar', 'piesek', 2, 'duży', 22, 60, 'Długa/mieszana', 0, 'Cheddar to wyjątkowy piesek, który trafił do nas bardzo zaniedbany, z obciętym ogonem, sflicowaną sierścią, bardzo zabiedzony (ma duża niedowagę). Z początkowo niepewnego w schronisku szybko zmienił się w otwartego wesołka. W sytuacjach nowych oparcia szuka w człowieku. Cheddar jest bardzo uległy w stosunku do opiekuna, przytula się, pragnie kontaktu, liże. Jest jednak ostrożny i na gwałtowny dotyk reaguje warknięciem. Na pewno spotkało go coś złego. W relacjach z psami ze swojego boksu jest przyjacielski i otwarty, nie przepada za obcymi samcami. Cheddar jest bardzo delikatnym psem, wyłącznie dla wyjątkowego człowieka. Będzie potrzebował czasu, spokoju, kogoś kto nie zrazi się gdy wystąpią problemy. Ten pies musi już trafić do tego jedynego domu na zawsze. Dom z małymi dziećmi - wykluczony. Cezar bardzo ładnie spaceruje na smyczy, lubi długie spokojne spacery. Czy ty też?', 'dog_photos/R86b92JAaWYngZe3ye7saVU3YMgASAbug8qDYVx7.jpg', NULL, NULL, NULL, NULL, '2025-01-19 13:47:57', '2025-01-19 13:47:57'),
-(5, 'Eika', 'eika', 'suczka', 1, 'średni', 12, 40, 'Krótka/mieszana', 0, 'Eika to bardzo delikatna sunia, którą schronisko kompletnie przytłacza. Nie rozumie jakie panują tu zasady, dlaczego zawsze jest hałas. W pierwszej chwili po wyjściu ze schroniska nie chce chodzić, ale gdy już ochłonie zaczyna wstawać i spokojnie spacerować. Pomalutku próbuje zwiedzać otoczenie i węszyć. Gdy czegoś się przestraszy, przystaje lub kładzie się. Eika lubi dotyk człowieka, głaski sprawiają jej radość. Jest łasa na smaczki i zaczyna powoli ogonkiem okazywać zadowolenie. Jest przyjacielska w stosunku do innych psiaków. Eika w nowym domu będzie potrzebowała czasu na oswojenie się z miejscem. Jeśli podarujesz jej miłość, dasz czas i otuchę Eika rozkwitnie. Szukamy domu bez małych dzieci, dom z innym psem mile widziany.', 'dog_photos/YtTR76tZphfSmZgjQkc80TKkyGET2CpaGtcCoVri.jpg', NULL, NULL, NULL, NULL, '2025-01-19 13:49:28', '2025-01-19 13:49:28'),
-(6, 'Varian', 'varian', 'piesek', 2, 'duży', 28, 60, 'Krótka', 0, 'Varian to wielki pieszczoch, ciałem i duchem. Przeczący fatalnym stereotypom, że dużemu psu do szczęścia potrzebne jest podwórko. Varianowi trzeba człowieka, który przytuli, posadzi na kanapie obok siebie, a wcześnie go \"wybiega\". Varian bardzo ładnie chodzi na smyczy, przeskakuje kałuże i reaguje na komendy siad, daj łapę, chodź. Prawdopodobnie był bity, bo kuli się, gdy człowiek machnie gwałtownie ręką. Psiaki to dla niego zarówno przyjaciele, nieintersujące \"obiekty\" jak i wrogowie. Nie z każdym będzie się przyjaźnił. Za to ludzi uwielbia wszystkich. Varian czeka na osobę, która zapewni mu energetyczne spacery i przytulne wieczory razem.', 'dog_photos/LMgB8YtEyzYiNPyQKURR191B6zBq4e8sPuWG0B0x.jpg', NULL, NULL, NULL, NULL, '2025-01-19 13:51:12', '2025-01-19 13:51:12'),
-(7, 'Luni', 'luni', 'piesek', 3, 'średni', 12, 46, 'Długa/mieszana', 0, 'Luni to przesłodziak, łagodny i kochany. Bardzo pragnie człowieka, bez pardonu wpycha się na kolana i nie przepuści żadnej okazji by dać buziaka. Luni wspaniale chodzi na smyczy. Byłby wspaniałym przyjacielem dużego dziecka (wiek szkolny). Luni to delikatny piesek, któremu brak pewności siebie, w sytuacjach stresowych chowa się, udaje niewidzialnego. Nie jest aktywny, osoba starsza także da sobie z nim radę. Dobrze reaguje na psy w schronisku. To przekochany psiak, który bardzo szybko musi znaleźć się w najlepszym domu.', 'dog_photos/isGdHUgmbiP79Z9f6pNP1pkAmWe1xg2yHuWRiJxA.jpg', NULL, NULL, NULL, NULL, '2025-01-19 13:51:59', '2025-01-19 13:51:59'),
-(8, 'Argon', 'argon', 'piesek', 2, 'średni', 18, 58, 'Krótka', 0, 'Argon to psiak naładowany pozytywną energią, której musi dać ujście. Bieganie, węszenie, zdobywanie nowych terenów - to powinien być jego chleb powszedni. Tego oczekujemy od przyszłego opiekuna - czasu dla psa, aktywności, otwartości na jego potrzeby. Argon słucha opiekuna, jest bardzo kontaktowy i bystry. Lubi dzieci, na pewno żył w jakiejś rodzinie. Uwielbia pieszczoty i czas, w którym człowiek się nim interesuje. Na spacerach szczeka do innych psów, ale nieagresywnie. Pięknie chodzi na smyczy.', 'dog_photos/OD99yv0gCBWdsKRhfcg3YJLiplwMe4FL2Dl4xgap.jpg', NULL, NULL, NULL, NULL, '2025-01-19 13:52:47', '2025-01-19 13:52:47'),
-(9, 'Sonar', 'sonar', 'piesek', 2, 'duży', 33, 65, 'Krótka', 0, 'Sonar to duży, kochany, cudowny pies. Wygląda na groźnego ale nic bardziej mylnego. To anioł w psiej skórze. Bardzo łagodny, kochany, przytulas. Idealnie zachowuje się w kontaktach z człowiekiem. Słucha, podąża i korzysta z każdej okazji by być blisko. Idealnie wręcz chodzi na smyczy - mimo siły, którą dysponuje, nie ciągnie, ładnie spaceruje podążając za opiekunem. Na pewno jednak będzie wymagał aktywności na co dzień. Sonar jest samcem dominującym w schroniskowym boksie, jeśli miałby iść do domu z innym psem to musiałaby być to uległa suczka. Sonar to słodziak jakich mało.', 'dog_photos/qT58WjHYq0aQc1eMhsZmIzgFYG6Esikj88N7FPPT.jpg', NULL, NULL, NULL, NULL, '2025-01-19 13:53:30', '2025-01-19 13:53:30'),
-(10, 'Alistar', 'alistar', 'piesek', 4, 'duży', 32, 59, 'Długa', 1, 'Alistar to pies szczególny, bardzo duży, młody a do tego pełen emocji. To niełatwa mieszanka, zwłaszcza przy psie przebywającym w schronisku. To pies, który potrzebuje ułożenia, wyciszenia, ogłady, treningu. A przede wszystkim człowieka, który da mu zasady i zadania do wykonania. Nie każdy poradzi sobie z takim psem. Alistar lubi aktywność, ale ładnie chodzi na smyczy. Różnie reaguje na mijane psy. Szukamy mu domu bez dzieci (podgryza w emocjach). Jeśli lubisz psy w typie owczarka i masz doświadczenie w pracy z psem to Alistar czeka na Ciebie.', 'dog_photos/aIYo6cK8ygokyKMQaUxGhwNhYl5zSKtzKSWLQZxA.jpg', NULL, NULL, NULL, NULL, '2025-01-19 13:54:16', '2025-01-19 13:54:16'),
-(11, 'Ariko', 'ariko', 'piesek', 5, 'średni', 13, 38, 'Krótka/mieszana', 1, 'Ariko to psiak, który musiał sporo przejść w życiu; do schroniska trafił zaniedbany i wycofany. Nie umiał chodzić na smyczy, nie wiedział, że człowiek może chcieć dla niego dobrze. Jednak bardzo szybko się wszystkiego uczy. Teraz bardzo czeka na swoją kolej na spacer i na kontakt z człowiekiem. Pięknie spaceruje na smyczy, powolutku drepcząc przy człowieku. Jest łasy na smaczki i lubi głaskanie po główce czy szyi. Ariko bardzo lubi inne psiaki i świetnie się z nimi dogaduje. Ariko nadal boi się przy zapinaniu i odpinaniu obroży, nie wie do końca czego się spodziewać, straszy wtedy zębami. Przyszła rodzina musi to z nim ćwiczyć, trzeba też będzie dać mu czas na oswojenie się z nowym miejscem. Po tym jak szybko zmienia się w schronisku wiemy, że kiedy już komuś w pełni zaufa będzie naprawdę wiernym członkiem rodziny. Wykluczamy dom z dziećmi, do Ariko trzeba podchodzić spokojnie i z wyczuciem, szanować jego początkowe granice świeżo po adopcji. Jeśli masz doświadczenie z psami i dużo cierpliwości Ariko czeka właśnie na Ciebie.', 'dog_photos/Rnt2j7ifHBXbLN1sF0JMfAcABZK1luNNRiJaE271.jpg', NULL, NULL, NULL, NULL, '2025-01-19 13:55:11', '2025-01-19 13:55:11'),
-(12, 'Gohan', 'gohan', 'piesek', 3, 'duży', 33, 62, 'Długa/mieszana', 1, 'Gohan jest wspaniałym, młodym i dużym psem. Bardzo mądrym i chętnym do współpracy z człowiekiem. Do tego łagodnym i przyjacielskim. Pięknie spaceruje na smyczy, nie zaczepiając podczas spacerów innych psów. Lubi aktywność, z natury jest energiczny. Bardzo słucha człowieka , podąża za nim. Kto da mu prawdziwy dom?', 'dog_photos/NAY5bxApNMKpXMncB427XtP0PRSWNBGRbmVJgtTI.jpg', NULL, NULL, NULL, NULL, '2025-01-19 13:56:25', '2025-01-19 13:56:25'),
-(13, 'Shine', 'shine', 'piesek', 5, 'średni', 18, 42, 'Długa/mieszana', 1, 'Shine w pierwszych chwilach znajomości jest wstydziuszkiem. Ale osoba ciepła i spokojna, która da mu czas szybko zyska w nim prawdziwego przyjaciela. Gdy czuje się bezpieczny pokazuje naturę wesołego i bardzo przyjacielskiego psiaka. To typowo stadny chłopak, który nie ma żadnych problemów w relacjach z psami i może zamieszkać w nawet bardzo \"zapsionym\" domu. Shine umie chodzić na smyczy, lubi spokojnie spacerować z osobą, przy której czuje się pewnie. Szukamy domu z osobami dorosłymi lub dziećmi w wieku szkolnym.', 'dog_photos/uAnBxiwb0vsQVdRGW16gcWzdMiEAVRa2Mxcci09f.jpg', NULL, NULL, NULL, NULL, '2025-01-19 13:57:30', '2025-01-19 13:57:30'),
-(14, 'Tasil', 'tasil', 'piesek', 3, 'średni', 18, 51, 'Długa/mieszana', 1, 'Tasil to ze wszech miar pies cudowny. Bardzo ułożony, łagodny i stonowany. Słucha człowieka, podąża za nim. W schronisku jest niezwykle opanowany, co w takich warunkach dla psa nie jest łatwe. Widać po zachowaniu, że jego dotychczasowe relacje z ludźmi były dobre. Pięknie chodzi na smyczy, stoi spokojnie gdy zatrzymuje się człowiek. Bardzo dobrze reaguje na inne psy. Tasil dopasuje się zarówno do rodziny z dziećmi, kogoś na emeryturze jak i domu z innym psem. On jest fantastycznym psem!', 'dog_photos/77Nmfa6QQOrrH1BjTwMQTth0Jkkq1RoTWl5IijVi.jpg', NULL, NULL, NULL, NULL, '2025-01-19 13:58:22', '2025-01-19 13:58:22');
+INSERT INTO `dogs` (`id`, `name`, `slug`, `sex`, `age`, `size`, `weight`, `height`, `hair`, `adopted`, `description`, `photo_path`, `created_at`, `updated_at`, `user_id`) VALUES
+(1, 'Lonely', 'lonely', 'suczka', 2, 'średni', 14, 45, 'Krótka/mieszana', 0, 'Lonley to piękna, oryginalnie umaszczona a do tego przesympatyczna sunia. Bardzo łagodna, kochana, uległa i posłuszna. Uwielbia pieszczoty, ale nie jest przy tym nachalna. Jest przyjaźnie nastawiona do wszystkich, zarówno dorosłych jak i dzieci. Potrafi pięknie chodzić na smyczy. Lonella pozytywnie reaguje na wszystkie napotkane psiaki, zachęca je wesoło do zabawy. Nigdy nie wykazuje agresji, nie warczy, ma postawę bardzo uległą. W domu tymczasowym mieszka w 7 letnią dziewczynką, jest naprawdę wzorowym pieskiem. Zachowuje czystość, nie niszczy, nie wchodzi na kanapę, nie ściąga jedzenia z kuchennych blatów. Grzecznie zostaje sama w domu kilka godzin. Uwielbia zabawę piłeczką w ogrodzie, widać, że sprawia jej to ogromną radość. Zamienia się wtedy w wulkan energii. Nawet podczas szalonej zabawy jest delikatna i ostrożna (także wobec kilkuletnich dzieci). Nie sprawia żadnych kłopotów podczas jazdy samochodem. To naprawdę idealna sunieczka - wierzymy, że wkrótce ktoś się w niech zakocha. Lonley jest wykastrowana.', 'dog_photos/AeteXaZSeFoN8PCMbwY3kih8q6ULGrjlKIC3JZ6k.jpg', '2025-01-19 13:43:19', '2025-01-21 13:08:21', NULL),
+(2, 'Lento', 'lento', 'piesek', 1, 'mały', 12, 38, 'Długa/mieszana', 0, 'Lento jest przyjaznym, niestrachliwym i bardzo śmiałym pieskiem. Przypuszczamy, że żył w mieście, bo nie boi się przejeżdżających aut i dużych skupisk ludzi czy psów. Radośnie wita każdego człowieka, a w boksie staje na dwóch łapkach i szczeka, chcąc zwrócić na siebie uwagę. Ma dobre relacje z psami ze swojego kojca, na spacerach też jest spokojny wobec psów, chyba, że są duże. Takich się boi i szczeka na nie. Lento ładnie chodzi na smyczy i bardzo lubi spacery u boku człowieka. Powinien wpasować się w rodzinkę z dziećmi, oczywiście takimi, które potrafią szanować psie granice. Lento to typ pieszczocha, który będzie wiernie podążał za Tobą.', 'dog_photos/UpOt5CtJTe71msgneSjpksAyFzIECfkGhZdfDhNC.jpg', '2025-01-19 13:45:31', '2025-01-21 11:17:28', NULL),
+(3, 'Carlo', 'carlo', 'piesek', 3, 'średni', 25, 58, 'Krótka', 1, 'Carlo to duży, bardzo energiczny samiec. Chce biegać, spacerować zwiedzać świat. Ze względu na swój temperament potrafi pociągnąć na smyczy. Aktywna zabawa to dla niego coś najwspanialszego. Dla Carlo wszystko co najlepsze jest z człowiekiem. Bo ludzi Carlo kocha ponad wszystko. Przytulanie, głaskanie, czochranie za uszami, to właśnie uwielbia. Nie przepada za bliskością innych psów-samców, chociaż na spacerze potrafi się grzecznie mijać. Carlo to wymarzony psiak dla aktywnych osób! Nie odnajdzie się w spokojnym domu, na kanapie... Ruch to jego żywioł. Obecnie Crlo mieszka w domu tymczasowym z duża sunią, z którą pięknie się bawi. Carlo akceptuje także koty.', 'dog_photos/Rucub2j7bGZQTEZKqH8qhSKuJ92g2MA9k5a0yAgE.jpg', '2025-01-19 13:46:45', '2025-01-22 10:04:14', 13),
+(4, 'Cheddar', 'cheddar', 'piesek', 2, 'duży', 22, 60, 'Długa/mieszana', 0, 'Cheddar to wyjątkowy piesek, który trafił do nas bardzo zaniedbany, z obciętym ogonem, sflicowaną sierścią, bardzo zabiedzony (ma duża niedowagę). Z początkowo niepewnego w schronisku szybko zmienił się w otwartego wesołka. W sytuacjach nowych oparcia szuka w człowieku. Cheddar jest bardzo uległy w stosunku do opiekuna, przytula się, pragnie kontaktu, liże. Jest jednak ostrożny i na gwałtowny dotyk reaguje warknięciem. Na pewno spotkało go coś złego. W relacjach z psami ze swojego boksu jest przyjacielski i otwarty, nie przepada za obcymi samcami. Cheddar jest bardzo delikatnym psem, wyłącznie dla wyjątkowego człowieka. Będzie potrzebował czasu, spokoju, kogoś kto nie zrazi się gdy wystąpią problemy. Ten pies musi już trafić do tego jedynego domu na zawsze. Dom z małymi dziećmi - wykluczony. Cezar bardzo ładnie spaceruje na smyczy, lubi długie spokojne spacery. Czy ty też?', 'dog_photos/R86b92JAaWYngZe3ye7saVU3YMgASAbug8qDYVx7.jpg', '2025-01-19 13:47:57', '2025-01-21 11:17:33', NULL),
+(5, 'Eika', 'eika', 'suczka', 1, 'średni', 12, 40, 'Krótka/mieszana', 0, 'Eika to bardzo delikatna sunia, którą schronisko kompletnie przytłacza. Nie rozumie jakie panują tu zasady, dlaczego zawsze jest hałas. W pierwszej chwili po wyjściu ze schroniska nie chce chodzić, ale gdy już ochłonie zaczyna wstawać i spokojnie spacerować. Pomalutku próbuje zwiedzać otoczenie i węszyć. Gdy czegoś się przestraszy, przystaje lub kładzie się. Eika lubi dotyk człowieka, głaski sprawiają jej radość. Jest łasa na smaczki i zaczyna powoli ogonkiem okazywać zadowolenie. Jest przyjacielska w stosunku do innych psiaków. Eika w nowym domu będzie potrzebowała czasu na oswojenie się z miejscem. Jeśli podarujesz jej miłość, dasz czas i otuchę Eika rozkwitnie. Szukamy domu bez małych dzieci, dom z innym psem mile widziany.', 'dog_photos/YtTR76tZphfSmZgjQkc80TKkyGET2CpaGtcCoVri.jpg', '2025-01-19 13:49:28', '2025-01-20 21:57:58', NULL),
+(6, 'Varian', 'varian', 'piesek', 2, 'duży', 28, 60, 'Krótka', 0, 'Varian to wielki pieszczoch, ciałem i duchem. Przeczący fatalnym stereotypom, że dużemu psu do szczęścia potrzebne jest podwórko. Varianowi trzeba człowieka, który przytuli, posadzi na kanapie obok siebie, a wcześnie go \"wybiega\". Varian bardzo ładnie chodzi na smyczy, przeskakuje kałuże i reaguje na komendy siad, daj łapę, chodź. Prawdopodobnie był bity, bo kuli się, gdy człowiek machnie gwałtownie ręką. Psiaki to dla niego zarówno przyjaciele, nieintersujące \"obiekty\" jak i wrogowie. Nie z każdym będzie się przyjaźnił. Za to ludzi uwielbia wszystkich. Varian czeka na osobę, która zapewni mu energetyczne spacery i przytulne wieczory razem.', 'dog_photos/LMgB8YtEyzYiNPyQKURR191B6zBq4e8sPuWG0B0x.jpg', '2025-01-19 13:51:12', '2025-01-19 13:51:12', NULL),
+(7, 'Luni', 'luni', 'piesek', 3, 'średni', 12, 46, 'Długa/mieszana', 0, 'Luni to przesłodziak, łagodny i kochany. Bardzo pragnie człowieka, bez pardonu wpycha się na kolana i nie przepuści żadnej okazji by dać buziaka. Luni wspaniale chodzi na smyczy. Byłby wspaniałym przyjacielem dużego dziecka (wiek szkolny). Luni to delikatny piesek, któremu brak pewności siebie, w sytuacjach stresowych chowa się, udaje niewidzialnego. Nie jest aktywny, osoba starsza także da sobie z nim radę. Dobrze reaguje na psy w schronisku. To przekochany psiak, który bardzo szybko musi znaleźć się w najlepszym domu.', 'dog_photos/isGdHUgmbiP79Z9f6pNP1pkAmWe1xg2yHuWRiJxA.jpg', '2025-01-19 13:51:59', '2025-01-19 13:51:59', NULL),
+(8, 'Argon', 'argon', 'piesek', 2, 'średni', 18, 58, 'Krótka', 0, 'Argon to psiak naładowany pozytywną energią, której musi dać ujście. Bieganie, węszenie, zdobywanie nowych terenów - to powinien być jego chleb powszedni. Tego oczekujemy od przyszłego opiekuna - czasu dla psa, aktywności, otwartości na jego potrzeby. Argon słucha opiekuna, jest bardzo kontaktowy i bystry. Lubi dzieci, na pewno żył w jakiejś rodzinie. Uwielbia pieszczoty i czas, w którym człowiek się nim interesuje. Na spacerach szczeka do innych psów, ale nieagresywnie. Pięknie chodzi na smyczy.', 'dog_photos/OD99yv0gCBWdsKRhfcg3YJLiplwMe4FL2Dl4xgap.jpg', '2025-01-19 13:52:47', '2025-01-19 13:52:47', NULL),
+(9, 'Sonar', 'sonar', 'piesek', 2, 'duży', 33, 65, 'Krótka', 0, 'Sonar to duży, kochany, cudowny pies. Wygląda na groźnego ale nic bardziej mylnego. To anioł w psiej skórze. Bardzo łagodny, kochany, przytulas. Idealnie zachowuje się w kontaktach z człowiekiem. Słucha, podąża i korzysta z każdej okazji by być blisko. Idealnie wręcz chodzi na smyczy - mimo siły, którą dysponuje, nie ciągnie, ładnie spaceruje podążając za opiekunem. Na pewno jednak będzie wymagał aktywności na co dzień. Sonar jest samcem dominującym w schroniskowym boksie, jeśli miałby iść do domu z innym psem to musiałaby być to uległa suczka. Sonar to słodziak jakich mało.', 'dog_photos/qT58WjHYq0aQc1eMhsZmIzgFYG6Esikj88N7FPPT.jpg', '2025-01-19 13:53:30', '2025-01-20 15:05:54', NULL),
+(10, 'Alistar', 'alistar', 'piesek', 4, 'duży', 32, 59, 'Długa', 1, 'Alistar to pies szczególny, bardzo duży, młody a do tego pełen emocji. To niełatwa mieszanka, zwłaszcza przy psie przebywającym w schronisku. To pies, który potrzebuje ułożenia, wyciszenia, ogłady, treningu. A przede wszystkim człowieka, który da mu zasady i zadania do wykonania. Nie każdy poradzi sobie z takim psem. Alistar lubi aktywność, ale ładnie chodzi na smyczy. Różnie reaguje na mijane psy. Szukamy mu domu bez dzieci (podgryza w emocjach). Jeśli lubisz psy w typie owczarka i masz doświadczenie w pracy z psem to Alistar czeka na Ciebie.', 'dog_photos/aIYo6cK8ygokyKMQaUxGhwNhYl5zSKtzKSWLQZxA.jpg', '2025-01-19 13:54:16', '2025-01-19 13:54:16', NULL),
+(11, 'Ariko', 'ariko', 'piesek', 5, 'średni', 13, 38, 'Krótka/mieszana', 1, 'Ariko to psiak, który musiał sporo przejść w życiu; do schroniska trafił zaniedbany i wycofany. Nie umiał chodzić na smyczy, nie wiedział, że człowiek może chcieć dla niego dobrze. Jednak bardzo szybko się wszystkiego uczy. Teraz bardzo czeka na swoją kolej na spacer i na kontakt z człowiekiem. Pięknie spaceruje na smyczy, powolutku drepcząc przy człowieku. Jest łasy na smaczki i lubi głaskanie po główce czy szyi. Ariko bardzo lubi inne psiaki i świetnie się z nimi dogaduje. Ariko nadal boi się przy zapinaniu i odpinaniu obroży, nie wie do końca czego się spodziewać, straszy wtedy zębami. Przyszła rodzina musi to z nim ćwiczyć, trzeba też będzie dać mu czas na oswojenie się z nowym miejscem. Po tym jak szybko zmienia się w schronisku wiemy, że kiedy już komuś w pełni zaufa będzie naprawdę wiernym członkiem rodziny. Wykluczamy dom z dziećmi, do Ariko trzeba podchodzić spokojnie i z wyczuciem, szanować jego początkowe granice świeżo po adopcji. Jeśli masz doświadczenie z psami i dużo cierpliwości Ariko czeka właśnie na Ciebie.', 'dog_photos/Rnt2j7ifHBXbLN1sF0JMfAcABZK1luNNRiJaE271.jpg', '2025-01-19 13:55:11', '2025-01-19 13:55:11', NULL),
+(12, 'Gohan', 'gohan', 'piesek', 3, 'duży', 33, 62, 'Długa', 1, 'Gohan jest wspaniałym, młodym i dużym psem. Bardzo mądrym i chętnym do współpracy z człowiekiem. Do tego łagodnym i przyjacielskim. Pięknie spaceruje na smyczy, nie zaczepiając podczas spacerów innych psów. Lubi aktywność, z natury jest energiczny. Bardzo słucha człowieka , podąża za nim. Kto da mu prawdziwy dom?', 'dog_photos/NAY5bxApNMKpXMncB427XtP0PRSWNBGRbmVJgtTI.jpg', '2025-01-19 13:56:25', '2025-01-21 13:31:58', NULL),
+(13, 'Shine', 'shine', 'piesek', 5, 'średni', 18, 42, 'Długa/mieszana', 1, 'Shine w pierwszych chwilach znajomości jest wstydziuszkiem. Ale osoba ciepła i spokojna, która da mu czas szybko zyska w nim prawdziwego przyjaciela. Gdy czuje się bezpieczny pokazuje naturę wesołego i bardzo przyjacielskiego psiaka. To typowo stadny chłopak, który nie ma żadnych problemów w relacjach z psami i może zamieszkać w nawet bardzo \"zapsionym\" domu. Shine umie chodzić na smyczy, lubi spokojnie spacerować z osobą, przy której czuje się pewnie. Szukamy domu z osobami dorosłymi lub dziećmi w wieku szkolnym.', 'dog_photos/uAnBxiwb0vsQVdRGW16gcWzdMiEAVRa2Mxcci09f.jpg', '2025-01-19 13:57:30', '2025-01-19 13:57:30', NULL),
+(14, 'Tasil', 'tasil', 'piesek', 3, 'średni', 18, 51, 'Długa/mieszana', 1, 'Tasil to ze wszech miar pies cudowny. Bardzo ułożony, łagodny i stonowany. Słucha człowieka, podąża za nim. W schronisku jest niezwykle opanowany, co w takich warunkach dla psa nie jest łatwe. Widać po zachowaniu, że jego dotychczasowe relacje z ludźmi były dobre. Pięknie chodzi na smyczy, stoi spokojnie gdy zatrzymuje się człowiek. Bardzo dobrze reaguje na inne psy. Tasil dopasuje się zarówno do rodziny z dziećmi, kogoś na emeryturze jak i domu z innym psem. On jest fantastycznym psem!', 'dog_photos/77Nmfa6QQOrrH1BjTwMQTth0Jkkq1RoTWl5IijVi.jpg', '2025-01-19 13:58:22', '2025-01-19 13:58:22', NULL),
+(23, 'Loki', 'loki', 'piesek', 2, 'mały', 22, 2, 'Długa', 0, '222', 'dog_photos/FCdzhozLygU0T9YDllalOU4sYB1sLZ4po4sQSPYR.png', '2025-01-22 10:06:31', '2025-01-22 10:06:31', NULL);
 
 -- --------------------------------------------------------
 
@@ -234,7 +232,12 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (66, '0001_01_01_000001_create_cache_table', 1),
 (67, '0001_01_01_000002_create_jobs_table', 1),
 (68, '2025_01_10_190751_create_dogs_table', 1),
-(69, '2025_01_11_184724_create_dog_photos_table', 1);
+(69, '2025_01_11_184724_create_dog_photos_table', 1),
+(71, '2025_01_19_142633_update_dogs_table', 2),
+(72, '2025_01_19_153651_add_user_id_to_dogs_table', 2),
+(73, '2025_01_19_161824_add_adopter_details_to_dogs_table', 3),
+(74, '2025_01_19_181754_remove_unused_columns_from_dogs_table', 4),
+(75, '2025_01_19_182222_add_surname_and_phone_to_users_table', 5);
 
 -- --------------------------------------------------------
 
@@ -268,7 +271,8 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('32vA2YzNSc5fLMjf1flGLQ0mdtKS4K0TfeUanfyG', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiOWJ3ZTZzZGRUckhYMVJoY0haWFV4NDlXZzVCMFN1NEdwVTFkTEo2ViI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG9wdG93YW5lIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czozOiJ1cmwiO2E6MTp7czo4OiJpbnRlbmRlZCI7czoyNjoiaHR0cDovLzEyNy4wLjAuMTo4MDAwL21vamUiO319', 1737298779);
+('eK27j418V4gFVYyi8TvXu7SM4gdYRbGZPdIJJt1t', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiQ09vbk80NkVJYWMwcXliMEFDN2ZPTmVVem1BT054VWNMMWxmeXRRdSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fX0=', 1737485169),
+('JlH1WXnrB1SrHYQBAMve56gpCVgTGPQvQR9AAABE', 4, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoic3Z4NFNscWJoVkdaWkZ4UmJ3WW9UeUN6aFVESmZMT0IzTkx6aUVDMyI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjU6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wc3kiO31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aTo0O3M6NDoiYXV0aCI7YToxOntzOjIxOiJwYXNzd29yZF9jb25maXJtZWRfYXQiO2k6MTczNzU0Mzk0MTt9fQ==', 1737543995);
 
 -- --------------------------------------------------------
 
@@ -279,13 +283,26 @@ INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL,
+  `surname` varchar(255) DEFAULT NULL,
+  `phone` varchar(15) DEFAULT NULL,
   `email` varchar(255) NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) NOT NULL,
   `remember_token` varchar(100) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `admin` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `surname`, `phone`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `admin`) VALUES
+(4, 'Agnieszka', 'Marzęda', '535987990', 'aga.marzeda@o2.pl', NULL, '$2y$12$cj3WIDb8TgN9nLm8Xh0dcuv7VfXKg1/8vcXg2aPfG/..d7V3K0rUK', NULL, '2025-01-20 13:52:42', '2025-01-20 13:52:42', 1),
+(8, 'Konrad', 'Filipek', '510930214', 'k4sto@o2.pl', NULL, '$2y$12$zkglJkNzWMW1Gs/79AIDuOIYLmNtdnQzPrBjyCgKnFYdtHA2ymHpW', NULL, '2025-01-20 21:30:02', '2025-01-20 22:36:31', 1),
+(12, 'Lonely', 'L', '3', 'dsa@fs.pl', NULL, '$2y$12$H07RelTKlggM8.D28EB9g.L.rHkY7fXa9VUgz4ISSRBvBPcN62H/2', NULL, '2025-01-21 17:27:46', '2025-01-21 17:27:46', 0),
+(13, 'Aga', 'Ma', '123456789', 'fgcb@jng', NULL, '$2y$12$r9H1ajO8OqiZK6ZktyJSXu7ST4xuzeWGUjMVhkmVmuEchedZMKgaW', NULL, '2025-01-22 10:03:01', '2025-01-22 10:04:34', 0);
 
 --
 -- Indeksy dla zrzutów tabel
@@ -308,7 +325,8 @@ ALTER TABLE `cache_locks`
 --
 ALTER TABLE `dogs`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `dogs_slug_unique` (`slug`);
+  ADD UNIQUE KEY `dogs_slug_unique` (`slug`),
+  ADD KEY `dogs_user_id_foreign` (`user_id`);
 
 --
 -- Indeksy dla tabeli `dog_photos`
@@ -372,13 +390,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `dogs`
 --
 ALTER TABLE `dogs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `dog_photos`
 --
 ALTER TABLE `dog_photos`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -396,17 +414,23 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `dogs`
+--
+ALTER TABLE `dogs`
+  ADD CONSTRAINT `dogs_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE SET NULL;
 
 --
 -- Constraints for table `dog_photos`
